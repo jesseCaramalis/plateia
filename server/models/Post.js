@@ -24,6 +24,9 @@ const PostSchema = new mongoose.Schema(
             type: Map,
             of: Boolean,
         },
+            /*likes being stored as an object with a bool value for a userId. 
+            If user likes post, they appear in obj with value true. 
+            Else they wont appear, saving time complexity when checking for likes. */
         comments: {
             type: Array,
             default: [],
@@ -34,4 +37,4 @@ const PostSchema = new mongoose.Schema(
 
 const Post = mongoose.model("Post", PostSchema);
 
-export default Post
+export default Post;
