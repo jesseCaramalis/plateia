@@ -16,18 +16,18 @@ import { register } from "./controllers/auth.js";
 import { verifyToken } from "./middleware/auth.js";
 
 // CONFIGS
-
 const __filename = fileURLToPath(import.meta.url); //lets you grab file url with modules
 const __dirname = path.dirname(__filename);
 dotenv.config();
 const app = express();
+app.use(cors());
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}));
 app.use(morgan("common"));
 app.use(bodyParser.json({limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({limit: "30mb", extended: true}));
-app.use(cors());
+
 app.use("/assets", express.static(path.join(__dirname, 'public/assets'))); //sets directory of where we keep assets, in this case locally
 
 // FILE STORAGE
