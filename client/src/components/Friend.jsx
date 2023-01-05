@@ -12,7 +12,8 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const navigate = useNavigate();
     const { _id } = useSelector((state) => state.user);
     const token = useSelector((state) => state.token);
-    const friends = useSelector((state) => state.user.friend);
+    const friends = useSelector((state) => state.user.friends);
+    
     const { palette } = useTheme();
     const primaryLight = palette.primary.light;
     const primaryDark = palette.primary.dark;
@@ -37,11 +38,11 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
     return (
         <FlexBetween>
-            <FlexBetweeng gap="1rem">
+            <FlexBetween gap="1rem">
                 <UserImage image={userPicturePath} size="55px" />
                 <Box 
                     onClick={() => {
-                        navigate(`/profile/${friendId}`),
+                        navigate(`/profile/${friendId}`);
                         navigate(0); 
                         // navigate(0) forces a page refresh in react router dom as components do not re-render when going to a users page through another users page.
                     }}
@@ -63,7 +64,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
                             {subtitle}
                         </Typography>
                     </Box>
-            </FlexBetweeng>
+            </FlexBetween>
             <IconButton
                 onClick={() => patchFriend()}
                 sx={{ backgroundColor: primaryLight, p: "0.6rem"}}

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPost } from "state";
+import { setPosts } from "state";
 import PostWidget from "./PostWidget";
 
 //this component will call getFeedPosts if on home page, and getUserPosts on profile page (server/routes/posts.js)
@@ -34,8 +34,8 @@ const PostsWidget = ({ userId, isProfile = false }) => {
             getUserPosts()
         } else {
             getPosts();
-        }
-    }, []); // eslint-disable-next-line
+        }// eslint-disable-next-line
+    }, []); 
 
     return (
         <>
