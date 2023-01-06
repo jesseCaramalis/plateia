@@ -25,7 +25,7 @@ const PostSchema = new mongoose.Schema(
             of: Boolean,
         },
             /*likes being stored as an object with a bool value for a userId. 
-            If user likes post, they appear in obj with value true. 
+            If user likes post, they appear in obj as userId with value true. 
             Else they wont appear, saving time complexity when checking for likes. */
         comments: {
             type: Array,
