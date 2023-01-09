@@ -162,7 +162,7 @@ const MyPostWidget = ({ picturePath}) => {
 
                 <Button
                     disabled={!post}
-                    onClick={handlePost}
+                    // onClick={handlePost}
                     sx={{
                         color: palette.background.alt,
                         backgroundColor: palette.primary.main,
