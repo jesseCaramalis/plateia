@@ -62,7 +62,7 @@ const MyPostWidget = ({ picturePath}) => {
             <FlexBetween gap="1.5rem">
                 <UserImage image={picturePath} />
                 <InputBase 
-                    placeholder="Creating posts is disabled on preview build."
+                    placeholder="What's on your mind..."
                     onChange= {(e) => setPost(e.target.value)}
                     value={post}
                     sx={{
@@ -162,7 +162,7 @@ const MyPostWidget = ({ picturePath}) => {
 
                 <Button
                     disabled={!post}
-                    // onClick={handlePost}
+                    onClick={handlePost}
                     sx={{
                         color: palette.background.alt,
                         backgroundColor: palette.primary.main,
