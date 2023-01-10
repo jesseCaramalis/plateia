@@ -132,7 +132,6 @@ const UserWidget = ({ userId, picturePath}) => {
                                     <Typography color={main} fontWeight="500">
                                         Twitter
                                     </Typography>
-                                    <Typography color={medium}>Social Network</Typography>
                                 </Box>
                             </FlexBetween>
                             <EditOutlined sx={{ color: main}} />
@@ -145,7 +144,6 @@ const UserWidget = ({ userId, picturePath}) => {
                                     <Typography color={main} fontWeight="500">
                                         LinkedIn
                                     </Typography>
-                                    <Typography color={medium}>Network Platform</Typography>
                                 </Box>
                             </FlexBetween>
                             <EditOutlined sx={{ color: main}} />
