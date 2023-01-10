@@ -1,10 +1,9 @@
 # Plateia
 Plateia is a fullstack social media application with users, posts, friends and more. I built this app out as a way to practice my skills in React, using industry standards for project structure and code formatting.
 
-![](demo.mp4)
+https://user-images.githubusercontent.com/101160675/211490019-5724c162-c681-4cf1-943e-823beb3cd246.mp4
 
 ## How It's Made:
-
 **Tech used:** HTML, CSS, JavaScript, Node.js, Express, React, React-Redux + Toolkit
 
 The backend is built in Node.js using Express and MongoDB. File uploads are stored locally using multer, whereas user and post information is stored on the database. JWT with helmet for HTML headers are used in authentication, with bcrypt for password hashing.
