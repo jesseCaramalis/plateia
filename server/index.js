@@ -59,6 +59,8 @@ app.use("/auth", authRoutes);
 app.use("/users", userRoutes);
 app.use("/posts", postRoutes);
 
+app.use(express.static('./client/build'));
+app.get('*', (req,res) => res.sendFile(path.resolve(__dirname, 'client', 'build','index.html')));
 
 // MONGOOSE
 const PORT = process.env.PORT || 6001;
