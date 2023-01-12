@@ -12,7 +12,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     const token = useSelector((state) => state.token);
 
     const getPosts = async () => {
-        const res = await fetch("/api/posts", {
+        const res = await fetch("/posts", {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -21,7 +21,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     };
 
     const getUserPosts = async () => {
-        const res = await fetch(`/api/posts/${userId}/posts`, {
+        const res = await fetch(`/posts/${userId}/posts`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });

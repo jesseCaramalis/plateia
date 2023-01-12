@@ -8,7 +8,7 @@ const UserImage = ({ image, size= "60px"}) => {
                 width={size}
                 height={size}
                 alt="user"
-                src={`/api/assets/${image}`}
+                src={`/assets/${image}`}
             />
         </Box>
     )
