@@ -1,6 +1,10 @@
 # Plateia
 Plateia is a fullstack social media application with users, posts, friends and more. I built this app out as a way to practice my skills in React, using industry standards for project structure and code formatting.
 ## Live site: https://plateia-front.onrender.com/
+You can create your own account or login with:
+  - Email: jessec@gmail.com
+  - PW: Password1
+
 Demo:
 https://user-images.githubusercontent.com/101160675/211490332-83ce8c18-d0c2-4c99-9bab-009961dd5b4e.mp4
 
