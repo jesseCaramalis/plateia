@@ -6,7 +6,10 @@ You can create your own account or login with:
   - PW: Password1
 
 Demo:
-https://user-images.githubusercontent.com/101160675/211490332-83ce8c18-d0c2-4c99-9bab-009961dd5b4e.mp4
+
+
+https://user-images.githubusercontent.com/101160675/212224597-861704a2-6247-431e-884a-3b4865878f05.mp4
+
 
 ## How It's Made:
 **Tech used:** HTML, CSS, JavaScript, Node.js, Express, React, React-Redux + Toolkit
