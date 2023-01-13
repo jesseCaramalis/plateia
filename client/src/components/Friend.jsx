@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { setFriends } from "state";
 import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
+import apiFetch from "utils/api";
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
@@ -23,7 +24,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
     const isFriend = friends.find((friend) => friend._id === friendId);
 
     const patchFriend = async () => {
-        const res = await fetch(`/users/${_id}/${friendId}`,
+        const res = await apiFetch(`/users/${_id}/${friendId}`,
         {
             method: "PATCH",
             headers: {

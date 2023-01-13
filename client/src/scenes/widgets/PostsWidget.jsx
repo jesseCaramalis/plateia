@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import PostWidget from "./PostWidget";
+import apiFetch from "utils/api";
 
 //this component will call getFeedPosts if on home page, and getUserPosts on profile page (server/routes/posts.js)
 //
@@ -12,7 +13,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     const token = useSelector((state) => state.token);
 
     const getPosts = async () => {
-        const res = await fetch("/posts", {
+        const res = await apiFetch("/posts", {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -21,7 +22,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     };
 
     const getUserPosts = async () => {
-        const res = await fetch(`/posts/${userId}/posts`, {
+        const res = await apiFetch(`/posts/${userId}/posts`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -35,37 +36,37 @@ const PostsWidget = ({ userId, isProfile = false }) => {
         } else {
             getPosts();
         }// eslint-disable-next-line
-    }, []); 
+    },[]); 
 
     return (
         <>
-        {posts.map(
-            ({
-                _id,
-                userId,
-                firstName,
-                lastName,
-                description,
-                location,
-                picturePath,
-                userPicturePath,
-                likes,
-                comments,
-            }) => (
-                <PostWidget
-                key={_id}
-                postId={_id}
-                postUserId={userId}
-                name={`${firstName} ${lastName}`}
-                description={description}
-                location={location}
-                picturePath={picturePath}
-                userPicturePath={userPicturePath}
-                likes={likes}
-                comments={comments}
-                />
-            )
-        )}
+            {posts.map(
+                ({
+                    _id,
+                    userId,
+                    firstName,
+                    lastName,
+                    description,
+                    location,
+                    picturePath,
+                    userPicturePath,
+                    likes,
+                    comments,
+                }) => (
+                    <PostWidget
+                    key={_id}
+                    postId={_id}
+                    postUserId={userId}
+                    name={`${firstName} ${lastName}`}
+                    description={description}
+                    location={location}
+                    picturePath={picturePath}
+                    userPicturePath={userPicturePath}
+                    likes={likes}
+                    comments={comments}
+                    />
+                )
+            )}
         </>
     )
 };

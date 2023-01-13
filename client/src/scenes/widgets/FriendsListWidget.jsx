@@ -4,6 +4,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFriends } from "state";
+import apiFetch from "utils/api";
 
 const FriendsListWidget = ({ userId }) => {
     const dispatch = useDispatch();
@@ -12,7 +13,7 @@ const FriendsListWidget = ({ userId }) => {
     const { palette } = useTheme();
 
     const getFriends = async () => {
-        const res = await fetch(`/users/${userId}/friends`, {
+        const res = await apiFetch(`/users/${userId}/friends`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
             }

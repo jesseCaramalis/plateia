@@ -23,6 +23,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
+import apiFetch from "utils/api";
 
 const MyPostWidget = ({ picturePath}) => {
     const dispatch = useDispatch();
@@ -45,7 +46,7 @@ const MyPostWidget = ({ picturePath}) => {
             formData.append("picturePath", image.name);
         }
 
-        const res = await fetch(`/posts`, {
+        const res = await apiFetch(`/posts`, {
             method: "POST",
             headers: { Authorization: `Bearer ${token}`},
             body: formData,
@@ -62,7 +63,7 @@ const MyPostWidget = ({ picturePath}) => {
             <FlexBetween gap="1.5rem">
                 <UserImage image={picturePath} />
                 <InputBase 
-                    placeholder="Posting is disabled on live build."
+                    placeholder="What's on your mind..."
                     onChange= {(e) => setPost(e.target.value)}
                     value={post}
                     sx={{
@@ -162,7 +163,7 @@ const MyPostWidget = ({ picturePath}) => {
 
                 <Button
                     disabled={!post}
-                    // onClick={handlePost}
+                    onClick={handlePost}
                     sx={{
                         color: palette.background.alt,
                         backgroundColor: palette.primary.main,
