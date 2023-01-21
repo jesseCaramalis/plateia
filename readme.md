@@ -29,5 +29,4 @@ Best practices such as scenes components for different pages, functional compone
 ## What's next?
 
 The project currently stands as a proof of concept for the components and widgets I've made, and how they come together as a basic framework for the site.
-My next additions will be comments and post deletion, integrating with cloudinary for file uploads instead of local storage, and eventual deployment. There is a long list of features
-required to bring this site onto the same level as Facebook for example, but these features would functionally be extensions of components already made, and I plan to move onto bigger and more exciting projects.
+My next additions will be comments and post deletion, integrating with cloudinary for file uploads instead of local storage, and eventual deployment. My contributions to Plateia have slowed down, as I've had an idea for [another project](https://github.com/jesseCaramalis/lookout) working through this one.
