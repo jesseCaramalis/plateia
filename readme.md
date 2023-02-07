@@ -4,6 +4,8 @@ Plateia is a fullstack social media application with users, posts, friends and m
 You can create your own account or login with:
   - Email: jessec@gmail.com
   - PW: Password1
+  
+Sometimes I'm fiddling with parts of the project, so Plateia might be down from time to time.
 
 Demo:
 
