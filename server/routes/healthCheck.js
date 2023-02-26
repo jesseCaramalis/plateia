@@ -2,19 +2,14 @@ import express from "express";
 
 const router = express.Router();
 
-router.get('/', async (_req, res, _next) => {
-
-    const healthcheck = {
-        uptime: process.uptime(),
-        message: 'OK',
-        timestamp: Date.now()
-    };
+router.get('/', (req, res) => {
+    const timestamp = new Date().toISOString();
     try {
-        res.send(healthcheck);
+      res.status(200).json({ message: 'OK', timestamp });
     } catch (error) {
-        healthcheck.message = error;
-        res.status(503).send();
+      res.status(503).json({ message: 'Error contacting API:' });
+      console.error(error, timestamp);
     }
-});
-// export router with all routes included
+  });
+
 export default router;

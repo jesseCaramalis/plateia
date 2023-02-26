@@ -13,6 +13,8 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import apiFetch from "utils/api";
 
+// Shows widget on LHS of screen with user info like name, location, occupation & profile pic
+
 const UserWidget = ({ userId, picturePath}) => {
     const [user, setUser] = useState(null);
     const { palette } = useTheme();

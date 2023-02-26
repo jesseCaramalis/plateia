@@ -14,6 +14,8 @@ import apiFetch from "utils/api";
 
 const API_URL = process.env.REACT_APP_API_URL;
 
+// Shows individual posts which are called from PostsWidget, each post has a user pic, name, location, description, image, likes and comments.
+
 const PostWidget = ({
         postId,
         postUserId,
