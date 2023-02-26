@@ -238,7 +238,7 @@ export const posts = [
     description:
       "Guess the location...",
     picturePath: "post5.jpg",
-    userPicturePath: "p7.jpeg",
+    userPicturePath: "p7.jpg",
     likes: new Map([
       [userIds[1], true],
       [userIds[3], true],
