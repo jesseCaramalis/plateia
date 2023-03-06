@@ -6,6 +6,8 @@ import { setFriends } from "state";
 import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 
+// This component is used to display a user's friends in the FriendsList component.
+// it also contains the logic for adding and removing friends
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
     const dispatch = useDispatch();

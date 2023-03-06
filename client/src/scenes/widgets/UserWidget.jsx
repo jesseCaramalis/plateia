@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+//this component contains information about the user, such as their name, location, occupation, etc
 const UserWidget = ({ userId, picturePath}) => {
     const [user, setUser] = useState(null);
     const { palette } = useTheme();

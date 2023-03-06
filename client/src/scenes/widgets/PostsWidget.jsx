@@ -2,9 +2,9 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
 import PostWidget from "./PostWidget";
-
-//this component will call getFeedPosts if on home page, and getUserPosts on profile page (server/routes/posts.js)
-//
+// this component renders a list of posts depending on the props passed to it
+// if isProfile is true, it will render the posts of the user whose profile is being viewed
+// otherwise it will render all posts using the PostWidget component, which maps over all of the posts in the redux store, and renders a PostWidget for each post
 
 const PostsWidget = ({ userId, isProfile = false }) => {
     const dispatch = useDispatch();
@@ -19,13 +19,13 @@ const PostsWidget = ({ userId, isProfile = false }) => {
         dispatch(setPosts({ posts: data }));
     };
 
-    const getUserPosts = async () => {
+    const getUserPosts = async () => { 
         const res = await fetch(`http://localhost:3001/posts/${userId}/posts`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
-        const data = await res.json();
-        dispatch(setPosts({ posts: data }));
+        const data = await res.json(); 
+        dispatch(setPosts({ posts: data })); 
     };
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
         } else {
             getPosts();
         }// eslint-disable-next-line
-    }, []); 
+    }, []); // empty array dependency to only run when component mounts
 
     return (
         <>

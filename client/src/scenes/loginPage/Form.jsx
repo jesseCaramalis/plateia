@@ -9,7 +9,7 @@ import { setLogin } from "state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "components/FlexBetween";
 
-const registerSchema = yup.object().shape({
+const registerSchema = yup.object().shape({ //yup validation schema for registration form
     firstName: yup.string().required("required"),
     lastName: yup.string().required("required"),
     email: yup.string().email("invalid email").required("required"),
@@ -19,7 +19,7 @@ const registerSchema = yup.object().shape({
     picture: yup.string().required("required"),
 })
 
-const loginSchema = yup.object().shape({
+const loginSchema = yup.object().shape({ //yup validation schema for login form
     email: yup.string().email("invalid email").required("required"),
     password: yup.string().required("required"),
 })

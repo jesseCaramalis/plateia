@@ -5,13 +5,15 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFriends } from "state";
 
+
+// displays friends list component
 const FriendsListWidget = ({ userId }) => {
     const dispatch = useDispatch();
     const token = useSelector((state) => state.token);
     const friends = useSelector((state) => state.user.friends);
     const { palette } = useTheme();
 
-    const getFriends = async () => {
+    const getFriends = async () => { //fetches friends from api, dispatches to reduxe store
         const res = await fetch(`http://localhost:3001/users/${userId}/friends`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
@@ -23,7 +25,7 @@ const FriendsListWidget = ({ userId }) => {
 
     useEffect(() => {
         getFriends(); // eslint-disable-next-line
-    }, []);
+    }, []); //needs empty array as a dependancy so the getFriends only runs when component is mounted
 
     return (
         <WidgetWrapper>

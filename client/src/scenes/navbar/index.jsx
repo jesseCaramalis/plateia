@@ -6,6 +6,7 @@ import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
 
+// navbar component, contains the logo, search bar, and user widget. Changes to hamburger menu on mobile screens.
 const Navbar = () => {
     const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
     const dispatch = useDispatch();
@@ -53,7 +54,7 @@ const Navbar = () => {
 
             {/* Desktop Nav */}
             {isNonMobileScreens ? (
-                <FlexBetween gap="2rem">
+                <FlexBetween gap="2rem"> 
                     <IconButton onClick={()=> dispatch(setMode())}>
                         {theme.palette.mode === "dark" ? (
                             <DarkMode sx={{ fontSize: "25px"}} />
@@ -64,9 +65,9 @@ const Navbar = () => {
                     <Message sx={{ fontSize: "25px"}} />
                     <Notifications sx={{ fontSize: "25px"}} />
                     <Help sx={{ fontSize: "25px"}} />
-                    <FormControl variant="standard" value={fullName}>
-                        <Select 
-                            value={fullName}
+                    <FormControl variant="standard" value={fullName}> 
+                        <Select  
+                            value={fullName} 
                             sx={{
                                 backgroundColor: neutralLight,
                                 width: "150px",
@@ -81,8 +82,8 @@ const Navbar = () => {
                                 }
                             }}
                             input={<InputBase />}
-                            >
-                            <MenuItem value={fullName}>
+                            > 
+                            <MenuItem value={fullName}> 
                                 <Typography>{fullName}</Typography>    
                             </MenuItem>
                             <MenuItem onClick={()=> dispatch(setLogout())}>Log Out</MenuItem>  
@@ -97,8 +98,8 @@ const Navbar = () => {
                 </IconButton>
             )}
 
-            {/* Mobile Nav */}
-            {!isNonMobileScreens && isMobileMenuToggled && (
+            {/* Mobile Nav */} 
+            {!isNonMobileScreens && isMobileMenuToggled && ( 
                 <Box
                 position="fixed"
                 right="0"
@@ -109,8 +110,8 @@ const Navbar = () => {
                 minWidth="300px"
                 backgroundColor={background}
                 >
-                    {/* Close Icon */}
-
+                    {/* Close Icon */} 
+                     
                     <Box display="flex" justifyContent="flex-end" p="1rem">
                         <IconButton
                         onClick={()=> setIsMobileMenuToggled(!isMobileMenuToggled)}
@@ -162,7 +163,7 @@ const Navbar = () => {
                                 <MenuItem value={fullName}>
                                     <Typography>{fullName}</Typography>    
                                 </MenuItem>
-                                <MenuItem onClick={()=> dispatch(setLogout())}>Log Out</MenuItem>  
+                                <MenuItem onClick={()=> dispatch(setLogout())}>Log Out</MenuItem>   
                             </Select>
                         </FormControl>
                     </FlexBetween>
