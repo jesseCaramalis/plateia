@@ -1,7 +1,17 @@
 # Plateia
 Plateia is a fullstack social media application with users, posts, friends and more. I built this app out as a way to practice my skills in React, using industry standards for project structure and code formatting.
+## Live site: https://plateia-front.onrender.com/
+You can create your own account or login with:
+  - Email: jessec@gmail.com
+  - PW: Password1
+  
+Sometimes I'm fiddling with parts of the project, so Plateia might be down from time to time.
 
-https://user-images.githubusercontent.com/101160675/211490332-83ce8c18-d0c2-4c99-9bab-009961dd5b4e.mp4
+Demo:
+
+
+https://user-images.githubusercontent.com/101160675/212224597-861704a2-6247-431e-884a-3b4865878f05.mp4
+
 
 ## How It's Made:
 **Tech used:** HTML, CSS, JavaScript, Node.js, Express, React, React-Redux + Toolkit
@@ -21,5 +31,4 @@ Best practices such as scenes components for different pages, functional compone
 ## What's next?
 
 The project currently stands as a proof of concept for the components and widgets I've made, and how they come together as a basic framework for the site.
-My next additions will be comments and post deletion, integrating with cloudinary for file uploads instead of local storage, and eventual deployment. There is a long list of features
-required to bring this site onto the same level as Facebook for example, but these features would functionally be extensions of components already made, and I plan to move onto bigger and more exciting projects.
+My next additions will be comments and post deletion, integrating with cloudinary for file uploads instead of local storage, and eventual deployment. My contributions to Plateia have slowed down, as I've had an idea for [another project](https://github.com/jesseCaramalis/lookout) working through this one.
